@@ -3,7 +3,7 @@ import { defu } from 'defu'
 
 export interface NuxtIntercomConfig {
   /** Intercom ID */
-  appId: string | Function
+  appId: string | Function | undefined
   /** True to boot messenger widget and show UI on page load, false to allow manually booting later. Default: true */
   autoBoot: boolean
   /** True to show debug messages in the console, useful for development, false to not show them. Default: false */
@@ -25,6 +25,7 @@ export default defineNuxtModule<NuxtIntercomConfig>({
   },
   // Default configuration options of the Nuxt module
   defaults: {
+    appId: undefined,
     autoBoot: true,
     debug: false,
     config: {},
