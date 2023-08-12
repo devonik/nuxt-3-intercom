@@ -8,7 +8,7 @@
 This nuxt 3 module provides a client side plugin that add intercom to window and provides $intercom instance so you can easily access intercom function like update user properties
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-intercom?file=playground%2Fapp.vue) -->
+<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-3-intercom?file=playground%2Fapp.vue) -->
 <!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
 ## Features
@@ -21,25 +21,25 @@ This nuxt 3 module provides a client side plugin that add intercom to window and
 
 ## Quick Setup
 
-1. Add `nuxt-intercom` dependency to your project
+1. Add `nuxt-3-intercom` dependency to your project
 
 ```bash
 # Using pnpm
-pnpm add -D nuxt-intercom
+pnpm add -D nuxt-3-intercom
 
 # Using yarn
-yarn add --dev nuxt-intercom
+yarn add --dev nuxt-3-intercom
 
 # Using npm
-npm install --save-dev nuxt-intercom
+npm install --save-dev nuxt-3-intercom
 ```
 
-2. Add `nuxt-intercom` to the `modules` section of `nuxt.config.ts`
+2. Add `nuxt-3-intercom` to the `modules` section of `nuxt.config.ts`
 
 ```js
 export default defineNuxtConfig({
   modules: [
-    'nuxt-intercom'
+    'nuxt-3-intercom'
   ],
   intercom: {
     // Required
@@ -90,14 +90,14 @@ npm run release
 ```
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/nuxt-intercom/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-version-href]: https://npmjs.com/package/nuxt-intercom
+[npm-version-src]: https://img.shields.io/npm/v/nuxt-3-intercom/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://npmjs.com/package/nuxt-3-intercom
 
-[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-intercom.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-downloads-href]: https://npmjs.com/package/nuxt-intercom
+[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-3-intercom.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://npmjs.com/package/nuxt-3-intercom
 
-[license-src]: https://img.shields.io/npm/l/nuxt-intercom.svg?style=flat&colorA=18181B&colorB=28CF8D
-[license-href]: https://npmjs.com/package/nuxt-intercom
+[license-src]: https://img.shields.io/npm/l/nuxt-3-intercom.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: https://npmjs.com/package/nuxt-3-intercom
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com

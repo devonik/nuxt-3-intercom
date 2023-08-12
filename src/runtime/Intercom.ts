@@ -208,6 +208,6 @@ export default class Intercom {
     if (!this.debug)
       return
 
-    console.log('[nuxt-intercom] DEBUG:', ...args) //
+    console.log('[nuxt-3-intercom] DEBUG:', ...args) //
   }
 }

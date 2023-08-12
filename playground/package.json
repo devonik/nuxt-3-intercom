@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "nuxt-intercom-playground",
+  "name": "nuxt-3-intercom-playground",
   "type": "module",
   "scripts": {
     "dev": "nuxi dev",

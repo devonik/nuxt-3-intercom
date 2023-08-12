@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-intercom",
+  "name": "nuxt-3-intercom",
   "version": "0.0.1",
   "description": "This nuxt 3 module provides a client side plugin that add intercom to window and provides $intercom instance so you can easily access intercom function like update user properties",
   "license": "MIT",
@@ -9,13 +9,13 @@
     "email": "niklas.grieger@devnik.dev",
     "url": "https://devnik.dev/"
   },
-  "homepage": "https://github.com/devonik/nuxt-intercom#readme",
+  "homepage": "https://github.com/devonik/nuxt-3-intercom#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/devonik/nuxt-intercom.git"
+    "url": "https://github.com/devonik/nuxt-3-intercom.git"
   },
   "bugs": {
-    "url": "https://github.com/devonik/nuxt-intercom/issues",
+    "url": "https://github.com/devonik/nuxt-3-intercom/issues",
     "email": "niklas.grieger@devnik.dev"
   },
   "exports": {
