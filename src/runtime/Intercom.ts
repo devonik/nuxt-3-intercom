@@ -47,8 +47,6 @@ export default class Intercom {
       )
     }
 
-    this._debugLog('Intercom call', ...args)
-
     return window.Intercom(...args)
   }
 
@@ -202,12 +200,5 @@ export default class Intercom {
       },
       {},
     )
-  }
-
-  _debugLog(...args: any[]) {
-    if (!this.debug)
-      return
-
-    console.log('[nuxt-3-intercom] DEBUG:', ...args) //
   }
 }

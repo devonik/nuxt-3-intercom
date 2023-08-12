@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "nuxt-3-intercom-playground",
   "type": "module",
   "scripts": {

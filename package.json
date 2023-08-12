@@ -1,14 +1,14 @@
 {
   "name": "nuxt-3-intercom",
+  "type": "module",
   "version": "0.0.1",
   "description": "This nuxt 3 module provides a client side plugin that add intercom to window and provides $intercom instance so you can easily access intercom function like update user properties",
-  "license": "MIT",
-  "type": "module",
   "author": {
     "name": "devnik",
     "email": "niklas.grieger@devnik.dev",
     "url": "https://devnik.dev/"
   },
+  "license": "MIT",
   "homepage": "https://github.com/devonik/nuxt-3-intercom#readme",
   "repository": {
     "type": "git",
@@ -21,8 +21,8 @@
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+      "require": "./dist/module.cjs",
+      "import": "./dist/module.mjs"
     }
   },
   "main": "./dist/module.cjs",
@@ -45,17 +45,16 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.6",
-    "@types/node": "^18.17.3",
     "@nuxt/devtools": "latest",
-    "@nuxt/eslint-config": "^0.1.1",
     "@nuxt/module-builder": "^0.4.0",
     "@nuxt/schema": "^3.6.5",
     "@nuxt/test-utils": "^3.6.5",
+    "@types/node": "^18.17.3",
     "changelogen": "^0.5.4",
     "eslint": "^8.46.0",
     "nuxt": "^3.6.5",
-    "vitest": "^0.34.1",
-    "simple-git-hooks": "^2.8.1"
+    "simple-git-hooks": "^2.8.1",
+    "vitest": "^0.34.1"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
