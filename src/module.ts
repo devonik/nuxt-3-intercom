@@ -38,7 +38,7 @@ export default defineNuxtModule<NuxtIntercomConfig>({
 
     // Async id evaluation
     if (typeof config.appId === 'function')
-      config.appId().then(appId => (config.appId = appId))
+      config.appId().then((appId: string) => (config.appId = appId))
 
     if (!config.appId) {
       console.warn(
