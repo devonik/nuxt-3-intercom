@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v0.1.0
+
+[compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v0.0.5...v0.1.0)
+
 ## v0.0.5
 
 [compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v0.0.4...v0.0.5)

@@ -1,7 +1,7 @@
 {
   "name": "nuxt-3-intercom",
   "type": "module",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "This nuxt 3 module provides a client side plugin that add intercom to window and provides $intercom instance so you can easily access intercom function like update user properties",
   "author": {
     "name": "devnik",
@@ -35,7 +35,7 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release --${VERSION:-patch} && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch"
