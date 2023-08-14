@@ -5,7 +5,7 @@ const { $intercom } = useNuxtApp()
 function updateIntercomUserData() {
   $intercom.update({
     name: 'hans',
-    customer_handler: '123',
+    custom_var: '123',
   })
 }
 </script>

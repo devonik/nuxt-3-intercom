@@ -1,8 +1,9 @@
+import type { NuxtIntercomConfig } from '../module'
 import Intercom from './Intercom'
 import { defineNuxtPlugin, useRuntimeConfig } from '#app'
 
 function createIntercomPlaceholder() {
-  const placeholder = (...args) => placeholder.c(args)
+  const placeholder = (...args: any[]) => placeholder.c(args)
   placeholder.queue = []
   placeholder.c = args => placeholder.queue.push(args)
 
@@ -25,29 +26,26 @@ function callWhenPageLoaded(callback) {
     window.addEventListener('load', callback, false)
 }
 
-function initialiseIntercom(ctx, intercom, config) {
+function initialiseIntercom(ctx: any, intercom: Intercom, config: NuxtIntercomConfig) {
   intercom.init()
 
   if (config.autoBoot)
-    intercom.boot({ app_id: config.appId })
+    intercom.boot({ appId: config.appId })
 
-  if (config.pageTracking)
-    startPageTracking(ctx)
+  if (config.updateOnPageRoute)
+    startPageTracking(ctx, intercom)
 }
 
-function startPageTracking(ctx) {
-  ctx.app.router.afterEach((to) => {
+function startPageTracking(ctx: any, intercom: Intercom) {
+  ctx.$router.afterEach((to) => {
     setTimeout(() => {
-      $intercom.update()
+      intercom.update()
     }, 250)
   })
 }
 export default defineNuxtPlugin((nuxtApp) => {
-  const config = useRuntimeConfig().public.intercom
-  const intercom = new Intercom(config, {
-    debug: config.debug,
-    config: config.config ? JSON.stringify(config.config) : '{}',
-  })
+  const config = useRuntimeConfig().public.intercom as NuxtIntercomConfig
+  const intercom = new Intercom(config)
 
   if (typeof window.Intercom === 'function') {
     intercom.init()

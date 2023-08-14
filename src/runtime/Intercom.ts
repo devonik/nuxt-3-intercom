@@ -1,34 +1,93 @@
+import type { NuxtIntercomConfig } from '../module'
+
 declare global {
   interface Window {
     Intercom?: any
     intercomSettings?: any
   }
 }
+interface IntercomUserAvatar {
+  /** The value is "avatar" */
+  type: string
+  /** An avatar image URL. Note: needs to be https. */
+  image_url: string
+}
+interface IntercomUserCompany {
+  /** The company ID of the company */
+  company_id: string
+  /** The name of the company */
+  name: string
+  /** The time the company was created in your system */
+  remote_created_at: number
+  /** The name of the plan the company is on */
+  plan: string
+  /** How much revenue the company generates for your business */
+  monthly_spend: number
+  /** Indicates the number of users in Intercom associated to the companyDoes not actually update the value but is a reserved keyword */
+  user_count: number
+  /** The number of employees in the company */
+  size: number
+  /** The URL for the company website */
+  website: string
+  /** The industry of the company */
+  industry: string
+}
 export interface IntercomUserData {
   [key: string]: any
-  app_id?: string
+  /** The email address of the currently logged in user (Only applicable to users) */
+  email?: string
+  /** The user_id address of the currently logged in user (Only applicable to users) */
+  user_id?: string
+  /** The Unix timestamp (in seconds) when the user signed up to your app (Only applicable to users) */
+  created_at?: number
+  /** Name of the current user/lead */
+  name?: string
+  /** Phone number of the current user/lead */
+  phone?: string
+  /** This value can't actually be set by the Javascript API (it automatically uses the time of the last request but is a this is a reserved attribute) */
   last_request_at?: number
+  /** Sets the [unsubscribe status]((https://docs.intercom.com/faqs-and-troubleshooting/unsubscribing-users/how-do-i-unsubscribe-users-from-receiving-emails) of the record */
+  unsubscribed_from_emails?: boolean
+  /** Set the messenger language programmatically (instead of relying on browser language settings) */
+  language_override?: string
+  /** UTM Campaign valueNote: All UTM parameters are updated automatically and can not be manually overidden (See https://docs.intercom.com/the-intercom-platform/track-conversions-and-clicks-with-utm-parameters for more) */
+  utm_campaign?: string
+  /** https://docs.intercom.com/the-intercom-platform/track-conversions-and-clicks-with-utm-parameters */
+  utm_content?: string
+  /** https://docs.intercom.com/the-intercom-platform/track-conversions-and-clicks-with-utm-parameters */
+  utm_medium?: string
+  /** https://docs.intercom.com/the-intercom-platform/track-conversions-and-clicks-with-utm-parameters */
+  utm_source?: string
+  /** https://docs.intercom.com/the-intercom-platform/track-conversions-and-clicks-with-utm-parameters */
+  utm_term?: string
+  /** Set the avatar/profile image associated to the current record (typically gathered via social profiles via email address https://docs.intercom.com/faqs-and-troubleshooting/your-users-and-leads-data-in-intercom/where-do-the-social-profiles-come-from) */
+  avatar?: IntercomUserAvatar
+  /** Used for identity verification (Only applicable to users) */
+  user_hash?: string
+  /** Current user's company (Only applicable to users)For field definitions see Company Object in the section belowNote: Company ID and company name are the minimum requirements to pass a company into Intercom. */
+  company?: IntercomUserCompany
+  /** An array of companies the user is associated to (Only applicable to users) */
+  companies?: Array<IntercomUserCompany>
+  app_id?: string | undefined
 }
 export default class Intercom {
   /** Intercom ID */
-  appId: string
+  appId?: string
   /** True to show debug messages in the console, useful for development, false to not show them. Default: false */
   debug: boolean
   /** Object to specify messenger attributes to configure when booting. see https://developers.intercom.com/installing-intercom/docs/javascript-api-attributes-objects#section-messenger-attributes. Default: {} */
-  config: any
+  config: NuxtIntercomConfig
   ready: boolean
   unreadCount: number
   userData: any
   visible: boolean
-  permanentUserData: string[] = ['app_id', 'email', 'user_id']
+  /** Remove all not listed non-permanent user data from cache. Anything not removed will be sent again with next update. */
+  permanentUserData: string[] = ['app_id', 'email', 'user_id', 'user_hash']
 
-  constructor(appId: string, settings = {
-    debug: false,
-    config: {},
-  }, { userData = {} } = {}) {
-    this.appId = appId
-    this.debug = settings.debug
-    this.config = settings.config
+  constructor(config: NuxtIntercomConfig, { userData = {} } = {}) {
+    this.appId = config.appId
+    this.debug = config.debug
+    this.config = config
     this.ready = false
     this.unreadCount = 0
     this.userData = userData
@@ -97,7 +156,7 @@ export default class Intercom {
   /**
    * Update user data sent to Intercom. This will also trigger a 'ping' to Intercom to check for new messages to display.
    */
-  update(userData = {}) {
+  update(userData: IntercomUserData = {}) {
     return this._updateData('update', userData)
   }
 
