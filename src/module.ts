@@ -25,9 +25,8 @@ export default defineNuxtModule<NuxtIntercomConfig>({
 
     if (!config.appId) {
       console.warn(
-        'No appId found for Intercom - not including plugin or intercom script on page',
+        'No appId found for Intercom in module config - be sure to add appId either in module config or nuxt public runtimeConfig under key intercom.appId. See readme for more',
       )
-      return
     }
 
     addPlugin(resolver.resolve('./runtime/plugin.client'))
