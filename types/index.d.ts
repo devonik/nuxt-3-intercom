@@ -95,5 +95,8 @@ interface NuxtIntercomConfig {
     company?: IntercomUserCompany
     /** An array of companies the user is associated to (Only applicable to users) */
     companies?: Array<IntercomUserCompany>
+    /** Can be set in update. Intercom ID */
     app_id?: string | undefined
+    /** Can be set in update. Hide the default launcher icon. Setting to false will forcefully show the launcher icon (See https://docs.intercom.com/configure-intercom-for-your-product-or-site/customize-the-intercom-messenger/turn-off-show-or-hide-the-intercom-messenger) */
+    hide_default_launcher?: boolean
   }
