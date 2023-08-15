@@ -5,6 +5,23 @@
 
 [compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.0.2...v1.0.5)
 
+### 🩹 Fixes
+
+- Merge module config and function param userData to window.intercomSettings ([79cbcdc](https://github.com/devonik/nuxt-3-intercom/commit/79cbcdc))
+- Inject script after boot function ([5412e29](https://github.com/devonik/nuxt-3-intercom/commit/5412e29))
+
+### 🏡 Chore
+
+- Add simple-git-hooks as dev dependency ([d8452fc](https://github.com/devonik/nuxt-3-intercom/commit/d8452fc))
+
+### ❤️  Contributors
+
+- Niklas Grieger <niklas.grieger@devnik.dev>
+
+## v1.0.5
+
+[compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.0.2...v1.0.5)
+
 ## v1.0.4
 
 [compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.0.2...v1.0.4)
