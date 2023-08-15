@@ -48,6 +48,21 @@ export default defineNuxtConfig({
 })
 ```
 
+internally the module config will be merged with nuxt runtimeConfig public.intercom cause we need access to the config in the plugin
+So if you want to have any intercom config changes depend on environment e.g staging/prod. You could overwrite the module config via runtimeConfig e.g.:
+
+```js
+export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      intercom: {
+        appId: process.env.INTERCOM_APP_ID
+      }
+    }
+  }
+})
+```
+
 That's it! You can now use intercom in your Nuxt app ✨
 
 ## Plugin
@@ -60,8 +75,6 @@ const { $intercom } = useNuxtApp()
 ```
 
 See /playground for more
-
-TODO .... Here should be a list with all methods provided by the Intercom instance
 
 ## Development
 
