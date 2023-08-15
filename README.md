@@ -76,6 +76,8 @@ const { $intercom } = useNuxtApp()
 
 See /playground for more
 
+The intercom plugin is fully typed so if you use const { $intercom } = useNuxtApp() you can navigate though the functions etc.
+
 ## Development
 
 ```bash
