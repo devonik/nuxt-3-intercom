@@ -8,22 +8,6 @@ function createIntercomPlaceholder() {
 
   return placeholder
 }
-function includeIntercomScript(appId, callback) {
-  const intercomScript = document.createElement('script')
-  intercomScript.async = true
-  intercomScript.src = `https://widget.intercom.io/widget/${appId}`
-  const firstScript = document.getElementsByTagName('script')[0]
-  firstScript.parentNode.insertBefore(intercomScript, firstScript)
-
-  intercomScript.addEventListener('load', callback)
-}
-function callWhenPageLoaded(callback) {
-  if (window.attachEvent)
-    window.attachEvent('onload', callback)
-
-  else
-    window.addEventListener('load', callback, false)
-}
 
 function initialiseIntercom(ctx: any, intercom: Intercom, config: NuxtIntercomConfig) {
   intercom.init()
@@ -54,14 +38,10 @@ export default defineNuxtPlugin((nuxtApp) => {
   else {
     window.Intercom = createIntercomPlaceholder()
 
-    const callWhenIntercomScriptLoaded = initialiseIntercom(
+    initialiseIntercom(
       nuxtApp,
       intercom,
       config,
-    )
-
-    callWhenPageLoaded(() =>
-      includeIntercomScript(config.appId, callWhenIntercomScriptLoaded),
     )
   }
   return {
