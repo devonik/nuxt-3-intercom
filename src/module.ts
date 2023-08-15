@@ -25,7 +25,7 @@ export default defineNuxtModule<NuxtIntercomConfig>({
 
     if (!config.appId) {
       console.warn(
-        'No appId found for Intercom in module config - be sure to add appId either in module config or nuxt public runtimeConfig under key intercom.appId. See readme for more',
+        'No appId found for Intercom in module config - be sure to add appId either in module config or nuxt public runtimeConfig under key intercom.appId. See https://github.com/devonik/nuxt-3-intercom#readme for more',
       )
     }
 
