@@ -1,4 +1,3 @@
-import type { NuxtIntercomConfig } from '../module'
 import Intercom from './Intercom'
 import { defineNuxtPlugin, useRuntimeConfig } from '#app'
 
@@ -71,3 +70,9 @@ export default defineNuxtPlugin((nuxtApp) => {
     },
   }
 })
+
+declare module '#app' {
+  interface NuxtApp {
+    $intercom: Intercom
+  }
+}
