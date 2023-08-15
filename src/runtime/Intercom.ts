@@ -68,7 +68,10 @@ export interface IntercomUserData {
   company?: IntercomUserCompany
   /** An array of companies the user is associated to (Only applicable to users) */
   companies?: Array<IntercomUserCompany>
+  /** Can be set in update. Intercom ID */
   app_id?: string | undefined
+  /** Can be set in update. Hide the default launcher icon. Setting to false will forcefully show the launcher icon (See https://docs.intercom.com/configure-intercom-for-your-product-or-site/customize-the-intercom-messenger/turn-off-show-or-hide-the-intercom-messenger) */
+  hide_default_launcher?: boolean
 }
 export default class Intercom {
   /** Intercom ID */
@@ -137,20 +140,27 @@ export default class Intercom {
   /**
    * Boot Intercom. If an appId is provided, this will be used for all future calls to Intercom.
    */
-  boot(userData: IntercomUserData = {}) {
-    if (userData.app_id)
-      this.appId = userData.app_id
+  boot(intercomSettings: IntercomUserData = {}) {
+    if (intercomSettings.app_id)
+      this.appId = intercomSettings.app_id
 
     if (!window.intercomSettings)
       window.intercomSettings = {}
     window.intercomSettings.app_id = this.appId
 
-    Object.keys(this.config).forEach((key) => {
+    // Write configs into intercomSettings
+    for (const key of Object.keys(this.config)) {
       const snakeCaseKey = key.replace(/([A-Z])/g, '_$1').toLowerCase()
       window.intercomSettings[snakeCaseKey] = this.config[key]
-    })
+    }
 
-    return this._updateData('boot', userData)
+    // Write / Overwrite configs coming form function call e.g. by plugin call into intercomSettings
+    for (const key of Object.keys(intercomSettings)) {
+      const snakeCaseKey = key.replace(/([A-Z])/g, '_$1').toLowerCase()
+      window.intercomSettings[snakeCaseKey] = intercomSettings[key]
+    }
+
+    return this._updateData('boot', intercomSettings)
   }
 
   /**
