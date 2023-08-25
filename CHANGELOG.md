@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.8
+
+[compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.0.7...v1.0.8)
+
+### 🩹 Fixes
+
+- Only boot intercom once ([8a5828e](https://github.com/devonik/nuxt-3-intercom/commit/8a5828e))
+
+### ❤️  Contributors
+
+- Niklas Grieger <niklas.grieger@devnik.dev>
+
 ## v1.0.7
 
 [compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.0.6...v1.0.7)
