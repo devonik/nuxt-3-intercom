@@ -11,7 +11,6 @@ export default class Intercom {
   visible: boolean
   /** Remove all not listed non-permanent user data from cache. Anything not removed will be sent again with next update. */
   permanentUserData: string[] = ['app_id', 'email', 'user_id', 'user_hash']
-  isScriptInjected: boolean
 
   constructor(config: NuxtIntercomConfig, { userData = {} } = {}) {
     this.appId = config.appId
@@ -21,7 +20,6 @@ export default class Intercom {
     this.unreadCount = 0
     this.userData = userData
     this.visible = false
-    this.isScriptInjected = false
   }
 
   /**
@@ -68,21 +66,19 @@ export default class Intercom {
     if (!appId)
       throw new Error('Could not inject intercom script cause appId is undefined')
 
-    if (this.isScriptInjected)
-      return
-
     const intercomScript = document.createElement('script')
     intercomScript.async = true
     intercomScript.src = `https://widget.intercom.io/widget/${this.appId}`
     const firstScript = document.getElementsByTagName('script')[0]
     firstScript.parentNode.insertBefore(intercomScript, firstScript)
-    this.isScriptInjected = true
   }
 
   /**
    * Boot Intercom. If an appId is provided, this will be used for all future calls to Intercom.
    */
   boot(intercomSettings: IntercomUserData = {}) {
+    if (window.Intercom.booted)
+      return true
     if (intercomSettings.app_id)
       this.appId = intercomSettings.app_id
 
@@ -101,6 +97,7 @@ export default class Intercom {
       const snakeCaseKey = key.replace(/([A-Z])/g, '_$1').toLowerCase()
       window.intercomSettings[snakeCaseKey] = intercomSettings[key]
     }
+
     const response = this._updateData('boot', intercomSettings)
 
     this.injectIntercomScript(this.appId)
