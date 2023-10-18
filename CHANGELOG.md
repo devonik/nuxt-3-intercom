@@ -1,6 +1,20 @@
 # Changelog
 
 
+## v1.1.0
+
+[compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.0.8...v1.1.0)
+
+### 🏡 Chore
+
+- **release:** V1.0.8 ([706021f](https://github.com/devonik/nuxt-3-intercom/commit/706021f))
+- Update packages to latest incl. latest eslint settings from @antfu ([5705431](https://github.com/devonik/nuxt-3-intercom/commit/5705431))
+- Update eslint settings to latest by @antfu ([d3484a5](https://github.com/devonik/nuxt-3-intercom/commit/d3484a5))
+
+### ❤️ Contributors
+
+- Niklas Grieger <niklas.grieger@devnik.dev>
+
 ## v1.0.8
 
 [compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.0.7...v1.0.8)
