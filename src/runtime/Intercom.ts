@@ -12,7 +12,7 @@ export default class Intercom {
   /** Remove all not listed non-permanent user data from cache. Anything not removed will be sent again with next update. */
   permanentUserData: string[] = ['app_id', 'email', 'user_id', 'user_hash']
 
-  constructor(config: NuxtIntercomConfig, { userData = {} } = {}) {
+  constructor(config: NuxtIntercomConfig, userData: IntercomUserData = {}) {
     this.appId = config.appId
     this.debug = config.debug
     this.config = config

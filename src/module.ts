@@ -1,6 +1,19 @@
 import { addPlugin, createResolver, defineNuxtModule } from '@nuxt/kit'
 import { defu } from 'defu'
 
+declare module '@nuxt/schema' {
+  interface ConfigSchema {
+    publicRuntimeConfig?: {
+      intercom?: NuxtIntercomConfig
+    }
+  }
+  interface NuxtConfig {
+    intercom?: NuxtIntercomConfig
+  }
+  interface NuxtOptions {
+    intercom?: NuxtIntercomConfig
+  }
+}
 export default defineNuxtModule<NuxtIntercomConfig>({
   meta: {
     name: 'nuxt-3-intercom',
