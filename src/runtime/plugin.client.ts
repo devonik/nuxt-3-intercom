@@ -20,7 +20,7 @@ function initialiseIntercom(ctx: any, intercom: Intercom, config: NuxtIntercomCo
 }
 
 function startPageTracking(ctx: any, intercom: Intercom) {
-  ctx.$router.afterEach((to) => {
+  ctx.$router.afterEach(() => {
     setTimeout(() => {
       intercom.update()
     }, 250)
