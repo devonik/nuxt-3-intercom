@@ -1,4 +1,4 @@
-export export interface NuxtIntercomConfig {
+export interface NuxtIntercomConfig {
   /** Intercom ID */
   appId?: string
   /** Intercom ID getting with promise */
