@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.1.2
+
+[compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.1.1...v1.1.2)
+
+### 🌊 Types
+
+- Expose interfaces so it's readable from dist ([7eac486](https://github.com/devonik/nuxt-3-intercom/commit/7eac486))
+
+### ❤️ Contributors
+
+- Niklas Grieger <niklas.grieger@devnik.dev>
+
 ## v1.1.1
 
 [compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.1.0...v1.1.1)
