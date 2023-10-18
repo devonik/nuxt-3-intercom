@@ -21,8 +21,8 @@
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
-      "require": "./dist/module.cjs",
-      "import": "./dist/module.mjs"
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
     }
   },
   "main": "./dist/module.cjs",
@@ -42,22 +42,22 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.6.5",
+    "@nuxt/kit": "^3.7.4",
     "defu": "^6.1.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.39.6",
-    "@nuxt/devtools": "latest",
-    "@nuxt/module-builder": "^0.4.0",
-    "@nuxt/schema": "^3.6.5",
-    "@nuxt/test-utils": "^3.6.5",
-    "@types/node": "^18.17.3",
-    "changelogen": "^0.5.4",
-    "eslint": "^8.46.0",
-    "lint-staged": "^14.0.0",
-    "nuxt": "^3.6.5",
-    "simple-git-hooks": "^2.8.1",
-    "vitest": "^0.34.1"
+    "@antfu/eslint-config": "1.0.0-beta.27",
+    "@nuxt/devtools": "1.0.0-beta.3",
+    "@nuxt/module-builder": "^0.5.2",
+    "@nuxt/schema": "^3.7.4",
+    "@nuxt/test-utils": "^3.7.4",
+    "@types/node": "^20.8.7",
+    "changelogen": "^0.5.5",
+    "eslint": "^8.51.0",
+    "lint-staged": "^15.0.1",
+    "nuxt": "^3.7.4",
+    "simple-git-hooks": "^2.9.0",
+    "vitest": "^0.34.6"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
