@@ -1,5 +1,6 @@
 import { addPlugin, createResolver, defineNuxtModule } from '@nuxt/kit'
 import { defu } from 'defu'
+import type { NuxtIntercomConfig } from './types'
 
 declare module '@nuxt/schema' {
   interface ConfigSchema {

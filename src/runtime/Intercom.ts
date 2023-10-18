@@ -1,8 +1,10 @@
+import type { IntercomUserData, NuxtIntercomConfig } from '../types'
+
 export default class Intercom {
   /** Intercom ID */
   appId?: string
   /** True to show debug messages in the console, useful for development, false to not show them. Default: false */
-  debug: boolean
+  debug?: boolean
   /** Object to specify messenger attributes to configure when booting. see https://developers.intercom.com/installing-intercom/docs/javascript-api-attributes-objects#section-messenger-attributes. Default: {} */
   config: NuxtIntercomConfig
   ready: boolean
@@ -70,7 +72,7 @@ export default class Intercom {
     intercomScript.async = true
     intercomScript.src = `https://widget.intercom.io/widget/${this.appId}`
     const firstScript = document.getElementsByTagName('script')[0]
-    firstScript.parentNode.insertBefore(intercomScript, firstScript)
+    firstScript.parentNode?.insertBefore(intercomScript, firstScript)
   }
 
   /**

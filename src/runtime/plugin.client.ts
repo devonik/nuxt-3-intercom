@@ -1,3 +1,4 @@
+import type { NuxtIntercomConfig } from '../types'
 import Intercom from './Intercom'
 import { defineNuxtPlugin, useRuntimeConfig } from '#app'
 

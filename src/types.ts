@@ -1,4 +1,4 @@
-interface NuxtIntercomConfig {
+export export interface NuxtIntercomConfig {
   /** Intercom ID */
   appId?: string
   /** Intercom ID getting with promise */
@@ -33,13 +33,13 @@ interface NuxtIntercomConfig {
   background_color?: string
 }
 
-interface IntercomUserAvatar {
+export interface IntercomUserAvatar {
   /** The value is "avatar" */
   type: string
   /** An avatar image URL. Note: needs to be https. */
   image_url: string
 }
-interface IntercomUserCompany {
+export interface IntercomUserCompany {
   /** The company ID of the company */
   company_id: string
   /** The name of the company */
@@ -59,7 +59,7 @@ interface IntercomUserCompany {
   /** The industry of the company */
   industry: string
 }
-interface IntercomUserData {
+export interface IntercomUserData {
   [key: string]: any
   /** The email address of the currently logged in user (Only applicable to users) */
   email?: string
