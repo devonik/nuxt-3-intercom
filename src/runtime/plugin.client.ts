@@ -53,12 +53,12 @@ export default defineNuxtPlugin((nuxtApp) => {
 
 declare module '#app' {
   interface NuxtApp {
-    $intercom (config: NuxtIntercomConfig, userData: IntercomUserData): Intercom
+    $intercom: Intercom
   }
 }
 declare module 'vue' {
   interface ComponentCustomProperties {
-    $intercom (config: NuxtIntercomConfig, userData: IntercomUserData): Intercom
+    $intercom: Intercom
   }
 }
 export {}
