@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.1.1
+
+[compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.1.0...v1.1.1)
+
+### 🌊 Types
+
+- Expose module type and plugin type ([e7446d4](https://github.com/devonik/nuxt-3-intercom/commit/e7446d4))
+
+### ❤️ Contributors
+
+- Niklas Grieger <niklas.grieger@devnik.dev>
+
 ## v1.1.0
 
 [compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.0.8...v1.1.0)
