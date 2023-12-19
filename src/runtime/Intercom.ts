@@ -88,7 +88,7 @@ export default class Intercom {
       window.intercomSettings = {}
     window.intercomSettings.app_id = this.appId
 
-    // Write configs into intercomSettings
+    // Write all nuxt runtime config keys intercom: {} configs into window intercomSettings
     for (const key of Object.keys(this.config)) {
       const snakeCaseKey = key.replace(/([A-Z])/g, '_$1').toLowerCase()
       window.intercomSettings[snakeCaseKey] = this.config[key]
