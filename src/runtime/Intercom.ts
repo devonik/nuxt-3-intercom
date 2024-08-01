@@ -180,6 +180,15 @@ export default class Intercom {
   }
 
   /**
+   * Trigger an article in the Messenger.
+   * The article will be shown within the Messenger, and clicking the Messenger back button will return to the previous context.
+   * If the Messenger is closed when the method is called, it will be opened first and then the article will be shown.
+   */
+  showArticle(articleId: number) {
+    return this.call('showArticle', articleId)
+  }
+
+  /**
    * Make a call to a method that updates user data.
    * This will merge the permanent user data that's cached with the new user data sent to this method.
    *
