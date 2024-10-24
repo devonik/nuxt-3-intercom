@@ -5,7 +5,7 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-This nuxt 3 module provides a client side plugin that add intercom to window and provides $intercom instance so you can easily access intercom function like update user properties
+This nuxt 3 module provides a client side plugin that add intercom to window and provides $intercom instance so you can easily access intercom function like update user properties. Everything is in Typescript and the types are exported.
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 <!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-3-intercom?file=playground%2Fapp.vue) -->
