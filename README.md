@@ -13,7 +13,7 @@ This nuxt 3 module provides a client side plugin that add intercom to window and
 
 ## Features
 
-<!-- Highlight some of the features your module provide here -->
+<!-- Highlight some  of the features your module provide here -->
 - ⛰ &nbsp;Nuxt 3 Ready
 - 🚠 &nbsp;As lightweight as possible
 - 🌲 &nbsp;Written in Typescript
