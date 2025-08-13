@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.1.5
+
+[compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.1.4...v1.1.5)
+
+### 🚀 Enhancements
+
+- Add option z_index ([c872b4c](https://github.com/devonik/nuxt-3-intercom/commit/c872b4c))
+
+### ❤️ Contributors
+
+- Niklas Grieger ([@devonik](http://github.com/devonik))
+
 ## v1.1.4
 
 [compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.1.2...v1.1.4)
