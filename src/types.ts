@@ -19,6 +19,8 @@ export interface NuxtIntercomConfig {
   custom_launcher_selector?: string
   /** Dictate the alignment of the default launcher icon to be on the left/right. Possible values: "left" or "right" (any other value is treated as right). (See https://docs.intercom.com/configure-intercom-for-your-product-or-site/customize-the-intercom-messenger/customize-the-intercom-messenger-technical) */
   alignment?: string
+  /** Set the messenger z-index. Not limitations https://developers.intercom.com/installing-intercom/web/customization#limitations */
+  z_index?: number
   /** Move the default launcher icon vertically. Padding from bottom of screen. Minimum value: 20. Does not work on mobile. (See https://docs.intercom.com/configure-intercom-for-your-product-or-site/customize-the-intercom-messenger/customize-the-intercom-messenger-technical) */
   vertical_padding?: number
   /** Move the default launcher icon horizontally. Padding from right side of screen Minimum value: 20. Does not work on mobile. (See https://docs.intercom.com/configure-intercom-for-your-product-or-site/customize-the-intercom-messenger/customize-the-intercom-messenger-technical) */
