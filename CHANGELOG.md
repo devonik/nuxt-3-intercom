@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.1.4
+
+[compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.1.2...v1.1.4)
+
+### 🚀 Enhancements
+
+- Add showArticle method ([d08ce63](https://github.com/devonik/nuxt-3-intercom/commit/d08ce63))
+
+### ❤️ Contributors
+
+- Meir Roth ([@meirroth](http://github.com/meirroth))
+
 ## v1.1.2
 
 [compare changes](https://github.com/devonik/nuxt-3-intercom/compare/v1.1.1...v1.1.2)

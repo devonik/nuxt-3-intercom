@@ -1,7 +1,7 @@
 {
   "name": "nuxt-3-intercom",
   "type": "module",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "packageManager": "pnpm@10.5.0+sha512.11106a5916c7406fe4b8cb8e3067974b8728f47308a4f5ac5e850304afa6f57e2847d7950dfe78877d8d36bfb401d381c4215db3a4c3547ffa63c14333a6fa51",
   "description": "This nuxt 3 module provides a client side plugin that add intercom to window and provides $intercom instance so you can easily access intercom function like update user properties",
   "author": {
